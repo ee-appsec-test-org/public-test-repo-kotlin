@@ -26,8 +26,8 @@ jobs:
           - language: java-kotlin
             build-mode: manual
     # For languages that require build, teams must specify the container in which CodeQL will run; if language does not require build this section is removed by automation
-    container:
-      image: 'IMAGE_PLACEHOLDER' # Teams should adapt
+#    container:
+  #    image: 'IMAGE_PLACEHOLDER' # Teams should adapt
 
     steps:
       - name: Checkout repository
