@@ -8,7 +8,7 @@ on:
 #    branches: [ "main", "master" ]
   schedule:
     - cron: '55 5 * * *' # Randomized per repository, daily runs somewhere between 22:00 and 06:00 UTC
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   analyze:
@@ -26,8 +26,8 @@ jobs:
           - language: java-kotlin
             build-mode: manual
     # For languages that require build, teams must specify the container in which CodeQL will run; if language does not require build this section is removed by automation
-#    container:
-  #    image: 'IMAGE_PLACEHOLDER' # Teams should adapt
+    container:
+      image: 'IMAGE_PLACEHOLDER' # Teams should adapt, should be in the format 'eu.gcr.io/halfpipe-io/build-image'
 
     steps:
       - name: Checkout repository
