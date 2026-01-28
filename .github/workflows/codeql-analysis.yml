@@ -10,6 +10,11 @@ on:
     - cron: '55 5 * * *' # Randomized per repository, daily runs somewhere between 22:00 and 06:00 UTC
   workflow_dispatch:
 
+env:
+  ARTIFACTORY_PASSWORD: ${{ secrets.EE_ARTIFACTORY_PASSWORD }}
+  ARTIFACTORY_URL: ${{ secrets.EE_ARTIFACTORY_URL }}
+  ARTIFACTORY_USERNAME: ${{ secrets.EE_ARTIFACTORY_USERNAME }}
+
 jobs:
   analyze:
     name: Analyze
@@ -23,7 +28,13 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - language: actions
+            build-mode: none
+          - language: go
+            build-mode: manual
           - language: javascript-typescript
+            build-mode: none
+          - language: python
             build-mode: none
           - language: java-kotlin
             build-mode: manual
