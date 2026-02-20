@@ -57,11 +57,11 @@ jobs:
      #     python-version: '3.x' # Adapt if your project requires a specific version
       #    cache: 'pip'
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 'lts/*' # Adapt if your project requires a specific version
-          cache: 'npm'
+ #     - name: Set up Node.js
+  #      uses: actions/setup-node@v4
+   #     with:
+    #      node-version: 'lts/*' # Adapt if your project requires a specific version
+     #     cache: 'npm'
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -70,11 +70,11 @@ jobs:
           java-version: '21' # Adapt if your project requires a specific version
           cache: 'gradle' # Use 'maven' if your project uses Maven
 
-      - name: Set up Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: 'stable' # Adapt if your project requires a specific version
-          cache: true
+ #     - name: Set up Go
+  #      uses: actions/setup-go@v5
+   #     with:
+    #      go-version: 'stable' # Adapt if your project requires a specific version
+     #     cache: true
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v4
