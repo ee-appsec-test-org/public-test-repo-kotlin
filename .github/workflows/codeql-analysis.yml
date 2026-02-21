@@ -8,8 +8,8 @@ on:
 #    branches: [ "main", "master" ]
 #  pull_request:
 #    branches: [ "main", "master" ]
-  schedule:
-    - cron: '55 5 * * *' # Randomized per repository, daily runs somewhere between 22:00 and 06:00 UTC
+#  schedule:
+#    - cron: '55 5 * * *' # Randomized per repository, daily runs somewhere between 22:00 and 06:00 UTC
   workflow_dispatch:
 
 env:
