@@ -39,8 +39,6 @@ jobs:
             build-mode: manual
           - language: javascript-typescript
             build-mode: none
-          - language: python
-            build-mode: none
           - language: java-kotlin
             build-mode: manual
     # For languages that require build, teams must specify the container in which CodeQL will run; if language does not require build this section is removed by automation
