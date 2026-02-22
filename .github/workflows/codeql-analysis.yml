@@ -68,7 +68,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21' # Adapt if your project requires a specific version
-          cache: 'gradle' # Use 'maven' if your project uses Maven
+          # cache: 'gradle' # Use 'maven' if your project uses Maven
 
  #     - name: Set up Go
   #      uses: actions/setup-go@v5
