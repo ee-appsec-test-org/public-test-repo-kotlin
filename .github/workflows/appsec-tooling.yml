@@ -1,0 +1,32 @@
+# ghas-management-template-version: 1.0
+
+name: "AppSec Tooling"
+
+on:
+  push:
+    branches: [ "main", "master" ]
+    paths:
+      - '.github/workflows/appsec-tooling.yml'
+  # Uncomment below to also trigger on every push or pull request to main/master
+  #  pull_request:
+  #    branches: [ "main", "master" ]
+  schedule:
+    - cron: '24 4 * * *' # Randomized per repository, daily runs somewhere between 22:00 and 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  appsec-tooling:
+    name: AppSec Tooling
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      security-events: write
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - uses: ee-appsec-test-org/appsec-tooling-dev@v0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          gar-credentials: ${{ secrets.LAB_GAR_SERVICE_ACCOUNT }} # DEV-ONLY
